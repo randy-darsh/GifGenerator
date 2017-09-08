@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :gifs, through: :favorites
   validates :email, :username, presence: true, uniqueness: true
   validates :password, presence: true
+  enum role: [:default, :admin]
 end

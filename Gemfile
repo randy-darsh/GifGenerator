@@ -42,6 +42,7 @@ group :development, :test do
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'launchy'
   gem 'pry'
+  gem 'pry-rails', :group => :development
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
