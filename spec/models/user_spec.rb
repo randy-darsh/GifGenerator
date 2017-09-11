@@ -25,11 +25,11 @@ RSpec.describe User do
 
   describe "User Roles" do
     it "can be created as an admin" do
-    user = User.create(username: "Dude", email: "dude@dude.com", password: "password", role: "admin")
+      user = User.create(username: "Dude", email: "dude@dude.com", password: "password", role: "admin")
 
-    expect(user.role).to eq("admin")
-    expect(user.admin?).to be_truthy
-  end
+      expect(user.role).to eq("admin")
+      expect(user.admin?).to be_truthy
+    end
 
     it "can be created as a default user" do
       user = User.create(username: "Dude", email: "dude@dude.com", password: "password")

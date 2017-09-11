@@ -4,4 +4,5 @@ url = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=c47d69e1506940
 resp = Net::HTTP.get_response(URI.parse(url))
 buffer = resp.body
 result = JSON.parse(buffer)
-puts result
+
+result["data"][0]["images"]["original"]["url"]

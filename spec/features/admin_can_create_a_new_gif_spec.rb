@@ -3,9 +3,11 @@ require 'rails_helper'
 RSpec.describe "When an admin visits the new admin gif page" do
   it 'can add a new gif' do
     # As an Admin
-
+    admin = User.create(username: "Admin", email: "admin@admin.com", password: "admin", role: "admin")
     # When I visit /admin/gifs/new
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     visit new_admin_gif_path
+    save_and_open_page
     # and I enter a word into the seach field
     fill_in 'search', with: 'cat'
     # and click "generate gif"

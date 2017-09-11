@@ -16,6 +16,6 @@ class Admin::GifsController < Admin::BaseController
   private
 
   def gif_params
-    params.require(:gif).permit(:image_url, :category)
+    params.require(:gif).permit(:image_url, :categories_id)
   end
 end
