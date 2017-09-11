@@ -1,0 +1,12 @@
+<h1>All Categories!</h1>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category) %><br>
+  <% if current_user.admin? %>
+    <%= button_to "Delete", admin_category_path(category), method: :delete %>
+  <% end %>
+<% end %>
+
+<% if current_user.admin? %>
+  <%= link_to "Add category", new_admin_category_path %>
+<% end %>

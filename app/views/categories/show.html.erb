@@ -1,0 +1,7 @@
+<h1><%= @category.name %></h1>
+
+<%= @category.name %> gifs
+
+<% @category.gifs.each do |gif| %>
+  <%= button_to "Add to Favorites", favorite_gif_path(gif, type: "favorite"), method: :put %>
+<% end %>
